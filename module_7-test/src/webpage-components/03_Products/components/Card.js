@@ -1,9 +1,13 @@
 import React from "react";
  
-
+ 
 export default function Card(props) {
+   
+
+   
   return (
     <>
+     
       <div className="card">
         <img src={props.data["productImage"]} alt='' />
         <div className="card-text">
@@ -33,11 +37,15 @@ export default function Card(props) {
           </div>
         </div>
         <button className="card-btn" 
-        onClick={props.addToCart}
+        onClick={ () => {
+          props.setCart(props.cart + 1)
+             
+         }}
         >
           ADD TO CART
         </button>
       </div>
+     
        
     </>
   );

@@ -3,7 +3,7 @@ import "./NavBar.css";
  
  
 
-function NavBar(props) {
+function NavBar({cart}) {
   return (
     <>
       <div className="header-container">
@@ -45,8 +45,8 @@ function NavBar(props) {
                 </clipPath>
               </defs>
             </svg>
-            <span className="cart-count"> 1
-               {props.count}
+            <span className="cart-count"> 
+               {cart}
                </span>
           </li>
           <li className="likes">

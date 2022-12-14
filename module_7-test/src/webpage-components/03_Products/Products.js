@@ -1,10 +1,14 @@
-import React from "react";
+import React,{useState} from "react";
 import "./Products.css";
 import Card from "./components/Card";
  
 
-export default function Products(props) {
-  const [products, setProducts] = React.useState([]);
+export default function Products( props ) {
+
+    
+   const{setCart, cart} = props;
+   
+  const [products, setProducts] = useState([]);
    
 
   React.useEffect(function () {
@@ -20,7 +24,12 @@ export default function Products(props) {
       <h3 className="products-heading">Products</h3>
       <div className="products-container">
         {products.map((item, index) => (
-          <Card key={index} data={item} addToCart={props.addToCart} />
+          <Card key={index} 
+          data={item}
+          setCart={setCart}
+          cart={cart} 
+           
+            />
         ))}
       </div>
     </>
