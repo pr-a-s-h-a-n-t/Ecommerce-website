@@ -38,11 +38,12 @@ export const signInWithGoogle = () => {
             localStorage.setItem("profilePic", profilePic);
             const val = localStorage.setItem("flag", true);
             window.location.reload()
+            // console.log()
 
 
 
-        }).catch((errror) => {
-            console.log(errror)
+        }).catch((error) => {
+            console.log(error)
         })
 }
 
