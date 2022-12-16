@@ -4,7 +4,7 @@ import "./NavBar.css";
  import { Link,  Outlet  } from "react-router-dom";
  
 
-function NavBar({cartCount}) {
+function NavBar({cartCount, size}) {
 
   const name = localStorage.getItem("name")
   const email = localStorage.getItem("email")
@@ -106,7 +106,7 @@ function NavBar({cartCount}) {
                     </svg>
               </Link>
                 <span className="cart-count"> 
-                  {cartCount}
+                  {  size}
                 </span>
           </li>
            
@@ -114,6 +114,7 @@ function NavBar({cartCount}) {
       </div>
         </nav>
       </div>
+      <Outlet />
     </>
   );
 }

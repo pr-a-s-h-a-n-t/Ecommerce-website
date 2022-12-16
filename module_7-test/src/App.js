@@ -4,11 +4,15 @@
 import LandingPage from "./webpage-components/Index";
 import Cart from "./webpage-components/cart/Cart"
 import NavBar from "./webpage-components/1_NavigationBar/NavBar";
-import Shop from "./webpage-components/Shop";
+import Shop from "./webpage-components/shop/Shop";
 
 
 function App() {
   const [cartCount, setCartCount] = useState(0);
+  const [show, setShow] = useState(true);
+  const [cart, setCart] = useState([]);
+  const [warning, setWarning] = useState(false);
+
 
   const [store, setStore] = useState([]);
   useEffect(() => {
@@ -23,18 +27,12 @@ function App() {
       object.amount = 1;
     });
     setStore(jsondata);
-
+     
 
   }
 
 
   console.log(store)
-
-
-  // below caode is for add to Cart feature!
-  const [show, setShow] = useState(true);
-  const [cart, setCart] = useState([]);
-  const [warning, setWarning] = useState(false);
 
 
   const handleClick = (item) => {
@@ -68,19 +66,20 @@ function App() {
     setCart([...tempArr])
   }
 
-
-
-
-  
+ 
 
   return (
     <>
-    <NavBar cartCount={cartCount} />
+    <NavBar size={cart.length} cartCount={cartCount} />
     <Routes>
-       {/* <Route path="/" element ={ <NavBar cartCount={cartCount} />}> </Route> */}
-          <Route index element ={ <LandingPage  cartCount={cartCount} setCartCount={setCartCount}    />} /> 
-          <Route path="cart" element ={ <Cart />} /> 
-          <Route path="shop" element ={ <Shop />} /> 
+        
+          <Route index element ={ <LandingPage   cartCount={cartCount} setCartCount={setCartCount}    />} /> 
+          <Route path="shop" element ={ <Shop  store={store} handleClick={handleClick}/>} /> 
+          <Route path="cart" element ={ <Cart 
+          cart={cart}
+          setCart={setCart}
+          handleChange = {handleChange }
+          />} /> 
           
            
         
