@@ -6,7 +6,7 @@ import Card from "./components/Card";
 export default function Products( props ) {
 
     
-   const{setCart, cart} = props;
+   const{setCartCount, cartCount} = props;
    
   const [products, setProducts] = useState([]);
    
@@ -21,13 +21,13 @@ export default function Products( props ) {
 
   return (
     <>
-      <h3 className="products-heading">Products</h3>
+      <h3 className="products-heading">Top Selling Products</h3>
       <div className="products-container">
         {products.map((item, index) => (
           <Card key={index} 
           data={item}
-          setCart={setCart}
-          cart={cart} 
+          setCartCount={setCartCount}
+          cartCount = {cartCount}
            
             />
         ))}

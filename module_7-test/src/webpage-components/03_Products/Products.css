@@ -1,11 +1,11 @@
 .products-heading {
-    width: 172px;
-    height: 32px;
+    width: 550px;
+    height: 40px;
     margin-left: 59px;
     margin-top: 34px;
     margin-bottom: 40px;
-  
     font-family: "Montserrat";
+    text-transform: uppercase;
     font-weight: 700;
     font-size: 36px;
     letter-spacing: 0.1px;
@@ -13,6 +13,7 @@
   }
   
   .products-container {
+    margin-top: -1rem;
     margin-left: 69px;
     display: flex;
     flex-direction: row;

@@ -38,7 +38,7 @@ export default function Card(props) {
         </div>
         <button className="card-btn" 
         onClick={ () => {
-          props.setCart(props.cart + 1)
+          props.setCartCount(props.cartCount + 1)
              
          }}
         >
