@@ -6,15 +6,15 @@ import Cart from "./webpage-components/cart/Cart"
 import NavBar from "./webpage-components/1_NavigationBar/NavBar";
 import Shop from "./webpage-components/shop/Shop";
 
-
+import { db } from 'firebase/firestore';
 function App() {
+  const [store, setStore] = useState([]);
+  const [cart, setCart] = useState([]);
   const [cartCount, setCartCount] = useState(0);
   const [show, setShow] = useState(true);
-  const [cart, setCart] = useState([]);
   const [warning, setWarning] = useState(false);
 
 
-  const [store, setStore] = useState([]);
   useEffect(() => {
     mystore();
   }, [])
